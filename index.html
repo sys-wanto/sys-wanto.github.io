@@ -382,7 +382,8 @@
             var email = document.getElementById("email").value;
             var message = document.getElementById("message").value;
             var text = nama+" "+email+" "+message;
-            console.log(text);
+            var res = encodeURI(text);
+            console.log(res);
         }
     </script>
     <!-- Bootstrap core JavaScript -->
