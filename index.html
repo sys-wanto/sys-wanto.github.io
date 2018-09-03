@@ -378,16 +378,10 @@
     </div>
     <script>
         function mailMe() {
-            var forms = document.getElementById("contactForm");
-            var text = "";
-            var i;
-            for(i = 0; i< i.length;i++){
-                text+= forms.elements[i].value+"\n";
-            }
             var nama = document.getElementById("name").value;
-            document.getElementById("demo").innerHTML = text;
-            console.log("hello world");
-            console.log(nama);
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var text = nama+" "+email+" "+message;
             console.log(text);
         }
     </script>
