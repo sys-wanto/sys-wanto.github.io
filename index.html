@@ -381,8 +381,9 @@
             var nama = document.getElementById("name").value;
             var email = document.getElementById("email").value;
             var message = document.getElementById("message").value;
-            var text = nama+" "+email+" "+message;
+            var text = "Nama : "+nama+"\n"+"E-Mail : "+email+"\n\n"+"Message : "+message;
             var res = encodeURI(text);
+            window.location.href = "https://wa.me/628813317486?text="+res;
             console.log(res);
         }
     </script>
