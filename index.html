@@ -9,7 +9,8 @@
     <meta name="author" content="">
 
     <title>Welcome to Sys-wanto's page</title>
-
+    <!-- Plugin Jquery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -189,7 +190,10 @@
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button class="btn btn-primary btn-xl" id="sendMessageButton" onclick="mailMe()">Send</button>
+              <button class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
+              <!--
+                onclick="mailMe()"
+              -->
             </div>
           </div>
         </div>
@@ -374,18 +378,18 @@
       </div>
     </div>
     <script>
-        function mailMe() {
-            var nama = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-            var text = "Name : "+nama+"\n"+"E-Mail : "+email+"\n\n"+"Message : \n"+message;
-            var res = encodeURI(text);
-            window.location.href = "https://wa.me/628813317486?text="+res;
-            console.log(res);
-        }
+        $('#sendMessageButton').click(function(){
+          var contact = '628813317486';
+          var nama = $('#name').val();
+          var email = $('#email').val();
+          var message = $('#message').val();
+          var text = "Name : "+nama+"\n"+"E-Mail : "+email+"\n\n"+"Message : \n"+message;
+          var res = encodeURI(text);
+          window.location.href = "https://wa.me/"+contact+"?text="+res;
+          console.log(res);
+        });
     </script>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
