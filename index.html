@@ -378,16 +378,28 @@
       </div>
     </div>
     <script>
-        $('#sendMessageButton').click(function(){
-          var contact = '628813317486';
-          var nama = $('#name').val();
-          var email = $('#email').val();
-          var message = $('#message').val();
-          var text = "Name : "+nama+"\n"+"E-Mail : "+email+"\n\n"+"Message : \n"+message;
-          var res = encodeURI(text);
-          window.location.href = "https://wa.me/"+contact+"?text="+res;
-          console.log(res);
+      $(document).ready(function(){
+        $.getJSON("dbase/data.json", function(data){
+          var items = [];
+          console.log(data.content);
+          /*
+          $.each(data, function(key, val){
+            items.push()
+          });
+          */
         });
+      });
+      $('#sendMessageButton').click(function(){
+        var contact = '628813317486';
+        var nama = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var text = "Name : "+nama+"\n"+"E-Mail : "+email+"\n\n"+"Message : \n"+message;
+        var res = encodeURI(text);
+        window.location.href = "https://wa.me/"+contact+"?text="+res;
+        console.log(res);
+      });
+        
     </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
